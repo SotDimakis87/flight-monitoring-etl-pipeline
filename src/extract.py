@@ -39,4 +39,7 @@ def extract_flights(departure_airport="ATH"):
 
 if __name__ == "__main__":
     result = extract_flights("ATH")
-    print(result)
+
+    if result:
+        print("\nFirst flight record:")
+        print(result["data"][0])
