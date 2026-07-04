@@ -8,7 +8,7 @@ API_KEY = os.getenv("AVIATIONSTACK_API_KEY")
 BASE_URL = os.getenv("AVIATIONSTACK_BASE_URL")
 
 
-def extract_flights(departure_airport="ATH"):
+def extract_flights(departure_airport="ATH", limit=100):
     """
     Extract raw flight data from AviationStack API.
     """
@@ -18,7 +18,7 @@ def extract_flights(departure_airport="ATH"):
     params = {
         "access_key": API_KEY,
         "dep_iata": departure_airport,
-        "limit": 100
+        "limit": limit
     }
 
     try:
