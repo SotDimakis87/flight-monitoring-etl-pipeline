@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 import pandas as pd
 
@@ -17,7 +17,7 @@ def transform_flights(api_response):
     transformed_data = []
 
     # Timestamp showing when THIS ETL execution happened
-    etl_load_timestamp = datetime.now()
+    etl_load_timestamp = datetime.now(timezone.utc)
 
     for flight in flights:
 
@@ -65,7 +65,7 @@ def transform_flights(api_response):
         errors="coerce"
     ).dt.date
 
-    datetime_columns = [
+    timestamp_columns = [
         "scheduled_departure",
         "estimated_departure",
         "actual_departure",
@@ -74,7 +74,7 @@ def transform_flights(api_response):
         "actual_arrival",
     ]
 
-    for column in datetime_columns:
+    for column in timestamp_columns:
         df[column] = pd.to_datetime(
             df[column],
             errors="coerce",
