@@ -19,7 +19,6 @@ def transform_flights(api_response):
     # Timestamp showing when THIS ETL execution happened
     etl_load_timestamp = datetime.now()
 
-    # Loop through each flight record returned by the API
     for flight in flights:
 
         transformed_data.append({
@@ -57,17 +56,35 @@ def transform_flights(api_response):
 
         })
 
-    # Convert the list of dictionaries into a Pandas DataFrame
     df = pd.DataFrame(transformed_data)
 
-    
     df = df.drop_duplicates()
 
-    print(f"Transformation completed successfully.")
+    df["flight_date"] = pd.to_datetime(
+        df["flight_date"],
+        errors="coerce"
+    ).dt.date
+
+    datetime_columns = [
+        "scheduled_departure",
+        "estimated_departure",
+        "actual_departure",
+        "scheduled_arrival",
+        "estimated_arrival",
+        "actual_arrival",
+    ]
+
+    for column in datetime_columns:
+        df[column] = pd.to_datetime(
+            df[column],
+            errors="coerce",
+            utc=True
+        )
+
+    print("Transformation completed successfully.")
     print(f"Total records transformed: {len(df)}")
 
     return df
-
 
 
 if __name__ == "__main__":
