@@ -48,7 +48,8 @@ def load_data(df: pd.DataFrame):
     """
 
     for _, row in df.iterrows():
-        cursor.execute(insert_query, tuple(row))
+        clean_row = tuple(None if pd.isna(value) else value for value in row)
+        cursor.execute(insert_query, clean_row)
 
     conn.commit()
     cursor.close()
