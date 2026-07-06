@@ -100,7 +100,7 @@ analysis.sql
 The full architecture diagram is shown below:
 
 ![Architecture Diagram](documentation/architecture.png)
-
+```
 
 ---
 
