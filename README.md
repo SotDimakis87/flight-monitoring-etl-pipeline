@@ -1,14 +1,9 @@
 # ✈️ Flight Monitoring ETL Pipeline
 
-An automated **Data Engineering ETL pipeline** that collects real-time flight departure data from the AviationStack API, transforms the raw JSON response into a structured tabular format, and loads the data into a Dockerized PostgreSQL database.
+## 📌 Project Overview
+This project implements an automated **Data Engineering ETL pipeline** that retrieves real-time flight departure data from the AviationStack API, transforms the raw JSON response into a structured tabular format, and loads the data into a Dockerized PostgreSQL database.
 
 The project focuses on departures from **Athens International Airport (ATH)** and demonstrates a complete workflow using **Python, Docker, PostgreSQL, SQL, environment variables, logging, and Cron-based automation**.
-
----
-
-## 📌 Project Overview
-
-This project implements an automated ETL pipeline that retrieves real-time flight departure data from the AviationStack API, transforms the data into a structured format, and loads it into a PostgreSQL database running in Docker containers.
 
 The pipeline is designed to monitor scheduled flight departures from Athens International Airport and store them in a relational database for further SQL analysis.
 
@@ -408,7 +403,7 @@ The analysis queries cover topics such as:
 * records loaded per ETL execution
 * flights by status
 * flights by airline
-* top destinations from Athens
+* top 10 destinations from Athens
 * scheduled departures by hour
 * UTC vs Athens local scheduled departure hour
 
