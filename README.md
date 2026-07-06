@@ -95,11 +95,11 @@ PostgreSQL Database
 analysis.sql
 ```
 
-The full architecture diagram is available here:
 
-```text
-documentation/architecture.png
-```
+```markdown
+The full architecture diagram is shown below:
+
+![Architecture Diagram](documentation/architecture.png)
 
 
 ---
