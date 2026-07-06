@@ -1,0 +1,2 @@
+# Run the ETL pipeline every day at 08:00 UTC
+0 8 * * * . /etc/environment; cd /app && /usr/local/bin/python src/etl_pipeline.py >> /app/data/logs/etl_cron.log 2>&1
