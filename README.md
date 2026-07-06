@@ -93,14 +93,13 @@ load.py
 PostgreSQL Database
         ↓
 analysis.sql
-```
 
 
 ```markdown
 The full architecture diagram is shown below:
 
 ![Architecture Diagram](documentation/architecture.png)
-```
+
 
 ---
 
