@@ -1,0 +1,4 @@
+# Always keep shell scripts and cron files as LF
+*.sh text eol=lf
+docker/cron_job text eol=lf
+docker/Dockerfile text eol=lf
